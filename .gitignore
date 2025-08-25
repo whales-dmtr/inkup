@@ -1,0 +1,17 @@
+__pycache__
+*.py[cod]
+
+*venv*
+.env
+.env.local
+
+**/.python-version
+
+.vscode
+*.swp
+.obsidian
+
+.DS_Store
+
+*.session.sql
+
