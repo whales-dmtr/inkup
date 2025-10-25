@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Posts(models.Model):
+class Post(models.Model):
     content = models.CharField(max_length=255)
     likes_number = models.IntegerField()
     time_created = models.DateTimeField(auto_now=True)
