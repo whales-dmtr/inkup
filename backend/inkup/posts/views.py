@@ -1,13 +1,15 @@
-from rest_framework import generics, status
-from rest_framework.views import Response, APIView
-from rest_framework.exceptions import APIException
-
-from posts.models import Post, Like
+from posts.models import Like, Post
 from posts.serializers import PostsSerializer
+from rest_framework import generics, status
+from rest_framework.decorators import api_view
+from rest_framework.exceptions import APIException
+from rest_framework.views import APIView, Response
 
 
 class PostListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.select_related("author").values(
+        "pk", "content", "author__username"
+    )
     serializer_class = PostsSerializer
 
     def create(self, request):
@@ -17,7 +19,7 @@ class PostListCreateAPIView(generics.ListCreateAPIView):
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-            
+
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -28,11 +30,11 @@ class PostRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     def partial_update(self, request, pk):
         for k in request.data.keys():
             if k in ["id", "time_created", "author"]:
-                raise APIException(f"The \"{k}\" field cannot be edited.")
+                raise APIException(f'The "{k}" field cannot be edited.')
 
         post = Post.objects.get(pk=pk)
-        data = self.serializer_class(post).data
-        
+        data = dict(self.serializer_class(post).data)
+
         data.update(request.data)
 
         serializer = self.serializer_class(post, data=data)
@@ -62,5 +64,10 @@ class LikePostAPIView(APIView):
             raise APIException("This user haven't liked this post.")
 
         like.delete()
-        
+
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(["GET"])
+def pong(request):
+    return Response({"return": "pong"})

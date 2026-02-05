@@ -1,0 +1,45 @@
+.main {
+    position: absolute;
+    left: 40px;
+    width: 65%;
+    height: 100%;
+    padding: 10px;
+}
+
+.post {
+    position: relative;
+    display: inline-block;
+    width: 750px;
+    max-height: 180px;
+    margin: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: white;
+}
+
+.post p {
+    margin: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+}
+
+.likes {
+    display: inline-block;
+    color: #df2935;
+    width: 100%;
+}
+
+.likes p {
+    display: inline-block; 
+    text-align: center;
+}
+
+#like-icon {
+    width: 30px;
+    fill: #df2935;
+}
+

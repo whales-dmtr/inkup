@@ -1,0 +1,94 @@
+.sidebar {
+    background-color: #080708;
+    color: #e6e8e6;
+    display: block;
+    position: fixed;
+    right: 0px;
+    width: 35%;
+    height: 100vh;
+    border-left: 1px solid #adb6c4;
+}
+
+.search {
+    margin: 10px;
+    position: relative;
+    background-color: #e6e8e6;
+    width: 87%;
+    padding: 5px;
+}
+
+#search-inp {
+    position: relative;
+    bottom: 4px;
+    display: inline-block;
+    width: 85%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #888B8D;
+    font-size: 20px;
+}
+
+#search-inp:placeholder-shown {
+    font-style: italic;
+}
+
+#search-inp:read-write {
+    font-family: inherit;
+}
+
+#search-inp:focus {
+    outline: none;
+}
+
+#search-submit {
+    display: inline-block;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#magnifying-glass {
+    height: 30px;
+    fill: #888B8D;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 80%;
+    background-color: #3772ff;
+    width: 90%;
+    height: 9%;
+    margin: 10px;
+}
+
+#user-icon {
+    height: 50px;
+    fill: #e6e8e6;
+    display: none
+}
+
+.links {
+    position: relative;
+    left: 5%;
+}
+
+.links p {
+    color: #e6e8e6;
+    font-size: 25px;
+}
+
+.links a {
+    text-decoration: none; 
+}
+
+.links a:visited {
+    color: #e6e8e6;
+}
+
+
+

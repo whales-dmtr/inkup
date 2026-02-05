@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box; 
+} 
+
+@font-face {
+    src: url("/static/fonts/cascadia.ttf");
+    font-family: Cascadia; 
+}
+
+body {
+    margin: 0;
+    font-family: Cascadia;
+    background-color: #e6e8e6;
+    color: #080708;
+    width: 100vw;
+    height: 100vh;
+}
+

@@ -21,10 +21,12 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
+from posts.views import pong
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include('posts.urls')),
+    path('ping/', pong),
 
     # JWT authentication
     path('token/', TokenObtainPairView.as_view()),
