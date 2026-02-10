@@ -21,8 +21,8 @@ SECRET_KEY = os.getenv('API_SECRET')
 DEBUG = bool(int(os.getenv('API_DEBUG', '1')))
 
 ALLOWED_HOSTS = os.getenv('API_ALLOWED_HOSTS', '').split()
-CSRF_TRUSTED_ORIGINS = os.getenv('API_CSRF_TRUSTED_ORIGINS', '').split()
-CORS_ALLOWED_ORIGINS = os.getenv('API_CORS_ALLOWED_ORIGINS', '').split()
+CSRF_TRUSTED_ORIGINS = os.getenv('API_TRUSTED_ORIGINS', '').split()
+CORS_ALLOWED_ORIGINS = os.getenv('API_TRUSTED_ORIGINS', '').split()
 
 # Application definition
 

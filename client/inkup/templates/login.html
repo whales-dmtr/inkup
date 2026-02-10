@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>InkUp | Log In</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/elements/auth_block.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/login.css">
+</head>
+
+<body>
+    <div class="auth-block">
+        <h1>Log In</h1>
+        <form method="post" action="localhost:5000/login/">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <div class="field">
+                <label for="username">Username: </label><br>
+                <input type="text" id="username" required />
+                <br>
+            </div>
+            <div class="field">
+                <label for="password">Password: </label><br>
+                <input type="password" id="password" required />
+                <br>
+            </div>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+</body>
+
+</html>
