@@ -19,7 +19,6 @@ class PostsSerializer(serializers.ModelSerializer):
         ]
 
     def get_likes_number(self, obj):
-        print(obj)
         return Like.objects.filter(post_id=obj["pk"]).count()
 
     def get_author_username(self, obj):

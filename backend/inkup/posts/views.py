@@ -1,7 +1,6 @@
 from posts.models import Like, Post
 from posts.serializers import PostsSerializer
 from rest_framework import generics, status
-from rest_framework.decorators import api_view
 from rest_framework.exceptions import APIException
 from rest_framework.views import APIView, Response
 
@@ -68,6 +67,3 @@ class LikePostAPIView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-@api_view(["GET"])
-def pong(request):
-    return Response({"return": "pong"})
